@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Event" representedClassName="Event" syncable="YES">
+        <attribute name="event_date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="event_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="event_name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="roster" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="People" inverseName="events" inverseEntity="People" syncable="YES"/>
+    </entity>
+    <entity name="People" representedClassName="People" syncable="YES">
+        <attribute name="attendance" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="first_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="last_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="roster" inverseEntity="Event" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Event" positionX="97" positionY="0" width="128" height="105"/>
+        <element name="People" positionX="-225" positionY="-39" width="128" height="120"/>
+    </elements>
+</model>
